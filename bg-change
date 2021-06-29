@@ -1,11 +1,11 @@
 #!/usr/bin/zsh
 # Declaring "universal" variables at the beginning
 bglocation="$HOME/Pictures/Backgrounds/"
-cd $bglocation
-backgrounds=$(identify "$bglocation*" | awk '{print $1,$3}' | sed 's|^/.*/||')
-tall=$(bc <<< "scale=5; 1080 / 1920")
-wide=$(bc <<< "scale=5; 1920 / 1080")
-squarish=$(bc <<< "scale=5; 1280 / 1024")
+cd "$bglocation"
+backgrounds="$(identify "$bglocation*" | awk '{print $1,$3}' | sed 's|^/.*/||')"
+tall="$(bc <<< "scale=5; 1080 / 1920")"
+wide="$(bc <<< "scale=5; 1920 / 1080")"
+squarish="$(bc <<< "scale=5; 1280 / 1024")"
 
 # Name says it - takes a background, assigns it to an array of the matching type.
 # The three arrays are "tallarr", "widearr", and "squarearr", matching the tall, wide, and squarish resolution ratios, respectively.
